@@ -22,6 +22,7 @@ Route.group(() => {
   Route.get('proyectos', 'ProyectoController.index').middleware('auth');
   Route.post('proyectos', 'ProyectoController.create').middleware('auth');
   Route.delete('proyectos/:id', 'ProyectoController.destroy').middleware('auth');
+  Route.patch('proyectos/:id', 'ProyectoController.update').middleware('auth');
 }).prefix('api/v1/');
 
 //PODEMOS AGRUPAR RUTAS POR VERSIONAMIENTOS
