@@ -1,6 +1,7 @@
 'use strict'
 
-const Proyecto = use('App/Models/Proyecto')
+const Proyecto = use('App/Models/Proyecto');
+const AutorizacionServicio = use('App/Services/AutorizacionServicios');
 
 class ProyectoController {
 
@@ -46,11 +47,7 @@ class ProyectoController {
         const user = await auth.getUser();
         const { id } = params;
         const proyecto = await Proyecto.find(id);
-        if (proyecto.user_id != user.id) {
-            return response.status(403).json({
-                mensaje: "Usted no es dueño de este proyecto!"
-            })
-        }
+        AutorizacionServicio.verificarPermiso(proyecto, user);
         await proyecto.delete();
         return proyecto;
     }
