@@ -6,6 +6,10 @@ const auth = require("../../../config/auth");
 const User = use('App/Models/User');
 
 class UserController {
+    async hello() {
+        return "Hello World";
+    }
+
     //Obtenemos datos JSON
     async login({ request, auth }) {
         const { email, password } = request.all();

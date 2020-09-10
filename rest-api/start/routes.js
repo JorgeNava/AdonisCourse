@@ -16,6 +16,8 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
+Route.get('/', 'UserController.hello')
+
 Route.group(() => {
   //Rutas del usuario
   Route.post('usuarios/registro', 'UserController.store');
