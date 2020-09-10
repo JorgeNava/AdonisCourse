@@ -1,3 +1,2 @@
 # AdonisCourse
-Learning Adonis.js framework
-\nDocker implemented to deploy on servers easly
+Learning Adonis.js framework. Docker implemented to deploy on servers easily.
