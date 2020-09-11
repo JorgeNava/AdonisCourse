@@ -15,8 +15,8 @@
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
-
-Route.get('/', 'UserController.hello')
+Route.get('', 'UserController.hello');
+Route.get('/test', 'UserController.test');
 
 Route.group(() => {
   //Rutas del usuario
